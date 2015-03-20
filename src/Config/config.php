@@ -13,8 +13,11 @@ $viewsDir = $projectDir . '/src/Views';
 $config = [
     'app' => [
         'classes'      => [
+            'Common\\Authentication\\IAuthentication' => $authDir . '/IAuthentication.php',
             'Common\\Authentication\\FileBased' => $authDir . '/FileBased.php',
             'Common\\Authentication\\InMemory'  => $authDir . '/InMemory.php',
+            'Common\\Authentication\\InMySQL'  => $authDir . '/InMySQL.php',
+            'Common\\Authentication\\InSqLite'  => $authDir . '/InSqLite.php',
             'Common\\Http\\IRequest'            => $httpDir . '/IRequest.php',
             'Common\\Http\\SimpleRequest'       => $httpDir . '/SimpleRequest.php',
             'Common\\Routers\\IRouter'          => $routerDir . '/IRouter.php',
@@ -37,7 +40,8 @@ $config = [
         ],
         'uri-mappings' => [
             '/auth' => 'Controllers\\AuthController',
-            '/'     => 'Controllers\\MainController'
+            '/'     => 'Controllers\\MainController',
+            '/home' => 'Controllers\\HomeController'
         ]
     ]
 ];
