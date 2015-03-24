@@ -34,7 +34,8 @@ class FileBased implements IAuthentication
             $test = explode(",",fgets($loginfile));
             foreach($test as $check)
             {
-                if (!strcmp($check, $this->getformattedcreds())) {
+                if (!strcmp($check, $this->getformattedcreds()))
+                {
                     fclose($loginfile);
                     echo 'Login Passed for '.$this->user;
                     return;
